@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
@@ -8,28 +8,17 @@ function App() {
   const [showAddTask, setShowAddTask] = useState(false)
 
   const [tasks, setTasks] = useState(
-    [
-      {
-        id: 1,
-        text: 'hi',
-        day: 'feb 5th at 2 30 am',
-        reminder: true
-    },
-    {
-        id: 2,
-        text: 'hi',
-        day: 'feb 5th at 2 30 am',
-        reminder: true
-    },
-    {
-        id: 4,
-        text: 'hi',
-        day: 'feb 5th at 2 30 am',
-        reminder: true
-    }
-
-    ]
+    []
   )
+
+  // useEffect(() => {
+  //   const getTasks = async () => {
+  //     const tasksFromServer = await fetchTasks()
+  //     setTasks(tasksFromServer)
+  //   }
+
+  //   getTasks()
+  // }, [])
 
     const addTask = (task) => {
       // console.log(task)
